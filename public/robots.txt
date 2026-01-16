@@ -1,0 +1,10 @@
+# https://1889dev.com/robots.txt
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://1889dev.com/sitemap.xml
+
+# Disallow admin/function endpoints
+Disallow: /api/
