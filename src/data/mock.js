@@ -5,7 +5,7 @@ export const mockData = {
     title: "We Build Systems.",
     subtitle: "Infrastructure-first solutions for startups in Norfolk, VA. From security systems to full-stack development.",
     backgroundImage: "https://images.unsplash.com/photo-1558627563-3e383cddc94a",
-    logo: "https://customer-assets.emergentagent.com/job_code1889/artifacts/rsmz3lv9_LoDi-Showing_stylized_flame...-Jan_13_2026_19-52-305l6p1a_1_-removebg-preview%281%29.png"
+    logo: "https://customer-assets.emergentagent.com/job_tech-engineers-1/artifacts/4vrz9ajg_1889%20DEV%20LOGO%28Cropped%29.png"
   },
   
   services: [
