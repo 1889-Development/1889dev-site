@@ -57,6 +57,7 @@ header {
   z-index: 100;
   box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.03);
   padding: 8px 0;
+  transition: padding 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Header container panel */
@@ -86,14 +87,21 @@ header.glass-header {
 }
 
 .logo-container {
+  
   position: relative;
   display: flex;
   align-items: center;
-  gap: 18px;
+  margin-bottom: 15px;
+  gap: 30px;
+  --brand-size: clamp(26px, 2.6vw, 36px);
+  --logo-scale: 1.95;
+
 }
 
 .logo-image {
-  height: 140px;
+  margin-top: 8px;
+  /*height: clamp(48px, 10vw, 70px);*/
+  height: calc(var(--brand-size) * var(--logo-scale));
   width: auto;
   transition: transform 0.3s ease, filter 0.3s ease;
   filter: drop-shadow(0 0 12px rgba(255, 45, 85, 0.3));
@@ -111,13 +119,14 @@ header.glass-header {
   gap: 6px;
   justify-content: center;
   align-self: center;
-  /* Visual adjustment - align with shield body center, not flame top */
+  /* Visual adjustment - align text with shield center */
   position: relative;
   top: 6px;
 }
 
 .brand-name {
-  font-size: 36px;
+  /*font-size: 36px;*/
+  font-size: var(--brand-size);
   font-weight: 900;
   color: #ffffff;
   line-height: 0.9;
@@ -134,9 +143,10 @@ header.glass-header {
 }
 
 .logo-image-footer {
+  transform: translateY(3px);
   height: 160px;
   width: auto;
-  margin-bottom: 24px;
+  margin-bottom: 0px;
   filter: drop-shadow(0 0 15px rgba(255, 45, 85, 0.3));
 }
 
@@ -832,18 +842,15 @@ header.glass-header {
   height: 70px;
   width: auto;
   filter: drop-shadow(0 0 12px rgba(255, 45, 85, 0.3));
-  /* Visual centering adjustment - logo flame sits high */
-  position: relative;
-  top: 5px;
 }
 
 .footer-brand-text {
   display: flex;
   flex-direction: column;
   gap: 2px;
-  /* Visual adjustment - align with shield body center */
+  /* Visual adjustment - align text with shield center */
   position: relative;
-  top: 4px;
+  top: 5px;
 }
 
 .footer-brand-name {
@@ -1347,12 +1354,24 @@ textarea.form-input {
 }
 
 .header-minimized .logo-image.logo-minimized {
-  height: 60px;
-  transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  /* height: clamp(48px, 6vw, 60px); */
+  transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s ease, filter 0.3s ease;
 }
 
+
+
+
+
+.header-minimized .logo-container {
+  --brand-size: clamp(20px, 2vw, 24px);
+}
+
+
+
+
+
 .header-minimized .logo-brand.brand-minimized .brand-name {
-  font-size: 24px;
+  /* font-size: 24px; */
   transition: font-size 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -1636,7 +1655,22 @@ textarea.form-input {
     padding: 6px 0;
   }
   
-  .logo-image {
+
+
+  .logo-container {
+    --brand-size: 24px;
+    --brand-size: clamp(22px, 5vw, 24px);
+  }
+  
+  .header-minimized .logo-container {
+    --brand-size: 20px;
+    --brand-size: clamp(18px, 4vw, 20px);
+  }
+
+
+
+
+  /*.logo-image {
     height: 80px;
   }
   
@@ -1650,7 +1684,7 @@ textarea.form-input {
   
   .header-minimized .logo-brand.brand-minimized .brand-name {
     font-size: 20px;
-  }
+  } */
   
   .brand-tagline {
     font-size: 8px;
@@ -1925,11 +1959,27 @@ textarea.form-input {
 
 /* Small mobile phones */
 @media (max-width: 480px) {
+
+
+
+
+  
   .logo-container {
     gap: 12px;
+        --brand-size: 20px;
+    --brand-size: clamp(18px, 6vw, 20px);
   }
   
-  .logo-image {
+  .header-minimized .logo-container {
+    --brand-size: 18px;
+    --brand-size: clamp(16px, 5vw, 18px);
+  }
+
+
+
+
+  
+/*  .logo-image {
     height: 60px;
   }
   
@@ -1944,7 +1994,11 @@ textarea.form-input {
   .header-minimized .logo-brand.brand-minimized .brand-name {
     font-size: 18px;
   }
+*/
   
+
+
+
   .brand-tagline {
     font-size: 7px;
     letter-spacing: 1px;
